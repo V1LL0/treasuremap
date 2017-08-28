@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="trasureMapApp">
+<head>
+    <!--<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js"></script>-->
+    <!--<script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>-->
+    <!--<script src="https://cdnjs.cloudflare.com/ajax/libs/d3/4.10.0/d3.min.js"></script>-->
+    <!--<script src="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-router/1.0.3/angular-ui-router.min.js"></script>-->
+    <!--<script src="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-bootstrap/2.5.0/ui-bootstrap-tpls.min.js"></script>-->
+    <!--<script src="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-bootstrap/2.5.0/ui-bootstrap.min.js"></script>-->
+    <script src="./javascripts/bundle.js"></script>
+    <!--<script src="./javascripts/main.js"></script>-->
+</head>
+
+<body>
+    <div ng-controller="TreasureMapCtrl">
+        <div class="map-container">
+            <svg style="width: 100%; height: 100%;" id="svg"></svg>
+        </div>
+
+
+        <div class="controls">
+            <div class="input">
+                <span>
+                   <input type="text" ng-model="inputMask.groupName">
+                </span>
+                <span>
+                    <button ng-click="addGroup()"> ADD </button>
+                </span>
+            </div>
+            <div>
+                <ul id="groupList">
+                    <li ng-repeat="group in groups"> {{group.name}} <button class="btn btn-danger btn-sm" ng-click="removeGroup(group)"> X </button> </li>
+                </ul>
+            </div>
+        </div>
+
+    </div>
+</body>
+</html>
