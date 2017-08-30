@@ -1,0 +1,32 @@
+<div ng-controller="homeCtrl">
+
+
+	<div class="controls">
+		<div class="input">
+			<span>
+			   <input type="text" ng-model="inputMask.groupName">
+			</span>
+			<span>
+				<button ng-click="addGroup()"> ADD </button>
+			</span>
+		</div>
+		<div>
+			<ul id="groupList">
+				<li ng-repeat="group in groups">
+
+					{{group.name}}
+
+
+					<input type="text" ng-model="group.img" size="40">
+
+					<button class="btn btn-danger btn-sm" ng-click="removeGroup(group)"> X </button> </li>
+			</ul>
+		</div>
+	</div>
+
+
+	<button ui-sref="about"> GO </button>
+
+
+
+</div>
